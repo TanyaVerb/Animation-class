@@ -39,6 +39,7 @@ body {
     border-bottom: 100px solid blue;
 
     transition: all 1s ease-out;
+
     &_top {
       transform: rotate(0deg);
       // @include translate(0, -100%)
@@ -65,9 +66,12 @@ body {
 
   &:has(input:checked) {
     background-color: blueviolet;
-    animation: around 1s normal infinite linear;
+    animation: around 1s normal infinite linear,
+      spinner 3s infinite normal linear;
+
     .square__triangle {
       border-bottom: 100px solid blueviolet;
+
       &_top {
         @include translate(0, -100%, 0);
       }
@@ -86,7 +90,7 @@ body {
 
 @keyframes around {
   0% {
-    border-radius: 0;
+    border-radius: 0%;
   }
   25% {
     border-radius: 25%;
@@ -103,60 +107,11 @@ body {
   }
 }
 
-// .triangle{
-
-// }
-
-// // .temp{
-// //     width: 0;
-// //     height: 0;
-// //     border-top: 100px solid transparent;
-// //     border-right: 200px solid #5cb85c;
-// //     border-bottom: 100px solid transparent;
-// // }
-
-// .square__triangle{
-//     // position: absolute;
-//     &_top{
-//         transform: rotate(0deg);
-//     }
-//     &_right{
-//         transform: rotate(90deg);
-//     }
-//     &_bottom{
-//         transform: rotate(180deg);
-//     }
-//     &_left{
-//         transform: rotate(-90deg);
-//     }
-// }
-// .square__triangle-top{
-//     width: 0;
-//     height: 0;
-//     border-left: 100px solid transparent;
-//     border-right: 100px solid transparent;
-//     border-bottom: 200px solid #5976f9;
-// }
-
-// .square__triangle-right{
-//     width: 0;
-//     height: 0;
-//     border-top: 100px solid transparent;
-//     border-left: 200px solid #5976f9;
-//     border-bottom: 100px solid transparent;
-// }
-// .square__triangle-bottom{
-//     width: 0;
-//     height: 0;
-//     border-left: 100px solid transparent;
-//     border-right: 100px solid transparent;
-//     border-top: 200px solid #5976f9;
-// }
-
-// .square__triangle-left{
-//     width: 0;
-//     height: 0;
-//     border-top: 100px solid transparent;
-//     border-right: 200px solid #5976f9;
-//     border-bottom: 100px solid transparent;
-// }
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
