@@ -60,8 +60,8 @@ body {
 }
 .square:has(input:checked) {
   background-color: blueviolet;
-  -webkit-animation: around 1s normal infinite linear, spinner 3s infinite normal linear;
-          animation: around 1s normal infinite linear, spinner 3s infinite normal linear;
+  -webkit-animation: around 2s normal infinite linear;
+          animation: around 2s normal infinite linear;
 }
 .square:has(input:checked) .square__triangle {
   border-bottom: 100px solid blueviolet;
@@ -86,55 +86,106 @@ body {
 @-webkit-keyframes around {
   0% {
     border-radius: 0%;
+    -webkit-transform: translate(-50%, -50%) rotate(0deg);
+            transform: translate(-50%, -50%) rotate(0deg);
   }
   25% {
     border-radius: 25%;
+    -webkit-transform: translate(-50%, -50%) rotate(90deg);
+            transform: translate(-50%, -50%) rotate(90deg);
   }
   50% {
     border-radius: 50%;
+    -webkit-transform: translate(-50%, -50%) rotate(180deg);
+            transform: translate(-50%, -50%) rotate(180deg);
   }
   75% {
     border-radius: 25%;
+    -webkit-transform: translate(-50%, -50%) rotate(270deg);
+            transform: translate(-50%, -50%) rotate(270deg);
   }
   100% {
     border-radius: 0%;
+    -webkit-transform: translate(-50%, -50%) rotate(360deg);
+            transform: translate(-50%, -50%) rotate(360deg);
   }
 }
 
 @keyframes around {
   0% {
     border-radius: 0%;
+    -webkit-transform: translate(-50%, -50%) rotate(0deg);
+            transform: translate(-50%, -50%) rotate(0deg);
   }
   25% {
     border-radius: 25%;
+    -webkit-transform: translate(-50%, -50%) rotate(90deg);
+            transform: translate(-50%, -50%) rotate(90deg);
   }
   50% {
     border-radius: 50%;
+    -webkit-transform: translate(-50%, -50%) rotate(180deg);
+            transform: translate(-50%, -50%) rotate(180deg);
   }
   75% {
     border-radius: 25%;
+    -webkit-transform: translate(-50%, -50%) rotate(270deg);
+            transform: translate(-50%, -50%) rotate(270deg);
   }
   100% {
     border-radius: 0%;
+    -webkit-transform: translate(-50%, -50%) rotate(360deg);
+            transform: translate(-50%, -50%) rotate(360deg);
   }
 }
-@-webkit-keyframes spinner {
-  0% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
-  }
+.grid {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr);
 }
-@keyframes spinner {
-  0% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
-  }
+.grid-item {
+  min-height: 80px;
+}
+.grid-item1 {
+  background-color: aqua;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+.grid-item2 {
+  background-color: rgb(132, 0, 255);
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+.grid-item3 {
+  background-color: rgb(255, 0, 119);
+  grid-column-start: 3;
+  grid-column-end: 5;
+  grid-row-start: 1;
+  grid-row-end: 3;
+}
+.grid-item4 {
+  background-color: rgb(217, 255, 0);
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+.grid-item5 {
+  background-color: rgb(255, 153, 0);
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 3;
+  grid-row-end: 4;
+}
+.grid-item6 {
+  background-color: rgb(0, 255, 179);
+  grid-column-start: 2;
+  grid-column-end: 5;
+  grid-row-start: 3;
+  grid-row-end: 4;
 }/*# sourceMappingURL=style.css.map */
